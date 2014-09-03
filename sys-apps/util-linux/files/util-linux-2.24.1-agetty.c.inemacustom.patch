@@ -1,0 +1,18 @@
+--- term-utils/agetty.c.orig	2014-08-05 12:29:21.546916638 +0200
++++ term-utils/agetty.c	2014-08-05 13:02:22.295026347 +0200
+@@ -2064,6 +2064,15 @@
+ 		free(host);
+ 		break;
+ 	}
++	case 'T':
++	{
++		#include <sys/sysinfo.h>
++		struct sysinfo info;
++
++		sysinfo(&info);
++		printf("%u", info.uptime);
++		break;
++	}
+ 	case 'd':
+ 	case 't':
+ 	{

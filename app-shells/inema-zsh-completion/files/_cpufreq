@@ -1,0 +1,12 @@
+#compdef cpufreq
+
+_cpufreq ()
+{
+    _arguments \
+	':command:($(cpufreq --ask))' \
+	&& return 0
+
+    return 0
+}
+
+_cpufreq "$@"

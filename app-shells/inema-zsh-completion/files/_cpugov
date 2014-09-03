@@ -1,0 +1,12 @@
+#compdef cpugov
+
+_cpugov ()
+{
+    _arguments \
+	":command:($(cpugov | sed 's/available governors are: //g'))" \
+	&& return 0
+
+    return 0
+}
+
+_cpugov "$@"

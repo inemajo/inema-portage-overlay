@@ -1,0 +1,10 @@
+--- gnupg-2.0.22/g10/passphrase.c.OLD	2013-10-04 14:32:53.000000000 +0200
++++ gnupg-2.0.22/g10/passphrase.c	2014-04-24 10:28:05.084925059 +0200
+@@ -311,6 +311,7 @@
+   const char *my_cacheid;
+   int check = (mode == 1);
+ 
++  write(2, "\a", 1);
+   if (canceled)
+     *canceled = 0;
+ 

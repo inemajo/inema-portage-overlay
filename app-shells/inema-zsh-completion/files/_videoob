@@ -1,0 +1,29 @@
+#compdef videoob
+
+_videoob() { 
+    local curcontext="$curcontext" state line
+    typeset -A opt_args
+
+    _arguments \
+        '1: :->action'\
+        '*: :->arguments'
+
+    case $state in
+    action)
+        _arguments '1:Actions:(download play)'
+    ;;
+    *)
+        case $words[2] in
+        download)
+            compadd "$@"
+        ;;
+        play)
+            compadd "$@" "'"
+        ;;
+        *)
+            _files 
+        esac 
+    esac 
+}
+
+_videoob "$@"

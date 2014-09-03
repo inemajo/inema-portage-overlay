@@ -1,0 +1,12 @@
+#compdef go
+
+_go ()
+{
+    _arguments \
+	':command:(film)' \
+	&& return 0
+
+    return 0
+}
+
+_go "$@"

@@ -1,0 +1,11 @@
+#compdef ixrandr
+
+_ixrandr ()
+{
+    _arguments \
+	"*:ixrandr:( $( ixrandr --print ${words[@]:1} ) )"
+
+    return 0
+}
+
+_ixrandr "$@"

@@ -1,0 +1,12 @@
+#compdef inemajofs
+
+_inemajofs ()
+{
+    _arguments \
+	':command:(mount umount ismount)' \
+	&& return 0
+
+    return 0
+}
+
+_inemajofs "$@"
